@@ -1,0 +1,503 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+body {
+    background: #f5f9fc;
+    font: 14px 'helvetica';
+    overflow: hidden;
+}
+.input-section h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px 0;
+    font-size: 21px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px #4072b8;
+}
+.letter-small{
+    float: left;
+    font-size: 28px;
+    margin: 3px;
+    box-shadow: 0 1px 2px #4072b8;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    width: 50px;
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+}
+.life-total {
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+.life {
+    float: left;
+}
+.life img {
+    height: 50px;
+}
+.term {
+    margin: 10px;
+    padding: 20px 10px;
+    text-align: center;
+}
+.term h1 {
+    margin-bottom: 30px;
+}
+.letter {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 30px;
+    padding-bottom: 35px;
+    border-radius: 4px;
+    background: #ffce88 ;
+}
+.input-section {
+    z-index: 999;
+    position: absolute;
+    right: 40px;
+    width: 400px;
+    bottom:40px;
+}
+.button {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    background: #1e88e5;
+}
+.inscore:first-child {
+    border-right: 1px solid #ddd;
+}
+.inscore:last-child {
+    margin-right: 0px;
+}
+.inscore {
+    float: left;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+.score {
+    position: absolute;
+    right: 40px;
+    top: 12px;
+}
+.score-value {
+    font-size: 38px;
+    font-weight: bold;
+}
+.input {
+    width: 90%;
+    text-align: center;
+    padding: 20px 5%;
+    font-weight:bold;
+    float: left;
+    font-size: 60px;
+    margin-bottom: 20px;
+    height: 40px;
+}
+.space {
+    padding: 4px 10px 16px 10px;
+    margin-bottom: 10px;
+    width: 10px;
+    float: left;
+    margin-left: 10px;
+    height: 55px;
+}
+.words:last-child {
+    margin-right: 14px;
+}
+.words:hover .wew {
+    top: -1px;
+    transition: 0.6s;
+}
+.words .wew {
+    position: absolute;
+    z-index: 999;
+    left: 28px;
+    top: -20px;
+    transition: 1s;
+    text-shadow: 0 1px 4px #444;
+    color: #fff;
+}
+.words {
+    padding: 4px 12px 24px 10px;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+    width: 70px;
+    float: left;
+    position: relative;
+    margin-right: 40px;
+    height: 55px;
+    font-size: 68px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px #aaa;
+}
+.words img {
+    position: absolute;
+    left: 0;
+    left: -6px;
+    height: 100px;
+}
+.wave {
+    width: 110%;
+    position: absolute;
+}
+.wave img {
+    width: 100%;
+}
+.wave_1 { bottom: 0; z-index: 80; animation: 4s linear infinite Waves1 }
+.wave_2 { bottom: 40px; z-index: 70; animation: 4s linear infinite Waves2 }
+.wave_3 { bottom: 80px; z-index: 60; animation: 4s linear infinite Waves3 }
+.wave_4 { bottom: 120px; z-index: 50; animation: 4s linear infinite Waves4 }
+.wave_5 { bottom: 160px; z-index: 40; animation: 4s linear infinite Waves5 }
+.wave_6 { bottom: 200px; z-index: 30; animation: 4s linear infinite Waves6 }
+.wave_7 { bottom: 240px; z-index: 20; animation: 4s linear infinite Waves7 }
+.wave_8 { bottom: 280px; z-index: 10; animation: 4s linear infinite Waves8 }
+
+.ship {
+    position: absolute;
+    z-index: 60;
+    height: 300px;
+    animation: 5s linear infinite ShipWave
+}
+.ship img {
+    height: 100%;
+}
+.result {
+    background: #009688;
+    top:0;
+    font-weight: bold;
+    line-height: 52px;
+    color: #fff;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+    text-align: center;
+    font-size: 40px;
+    left:0;
+    z-index: 9999999 !important;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.next {
+    position: absolute;
+    right: 15px;
+    bottom:10px;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+.after {
+    position: absolute;
+    padding: 20px;
+    right: 40px;
+    font-size: 32px;
+    width: 360px;
+    color: #fff;
+    z-index: 9999 !important;
+    bottom: 40px;
+    border-radius: 4px;
+    height: 280px;
+}
+.fail {
+    background: #D50000;
+}
+.success {
+    background: #009688;
+}
+
+
+@keyframes ShipWave {
+    0% {
+        left: 160px;
+        bottom: 170px;
+        transform: rotate(0deg)
+    }
+    20% {
+        left: 140px;
+        bottom: 180px;
+        transform: rotate(7deg)
+    }
+    40% {
+        left: 178px;
+        bottom: 188px;
+        transform: rotate(4deg)
+    }
+    60% {
+        left: 210px;
+        bottom: 179px;
+        transform: rotate(-2deg)
+    }
+    80% {
+        left: 205px;
+        bottom: 175px;
+        transform: rotate(5deg)
+    }
+    100% {
+        left: 160px;
+        bottom: 170px;
+        transform: rotate(0deg)
+    }
+}
+
+@keyframes Sinking {
+    0% {
+        left: 160px;
+        bottom: 170px;
+        transform: rotate(0deg)
+    }
+    10% {
+        left: 140px;
+        bottom: 140px;
+        transform: rotate(7deg)
+    }
+    30% {
+        left: 198px;
+        bottom: 108px;
+        transform: rotate(4deg)
+    }
+    50% {
+        left: 240px;
+        bottom: 99px;
+        transform: rotate(-2deg)
+    }
+    80% {
+        left: 245px;
+        bottom: 55px;
+        transform: rotate(30deg)
+    }
+    100% {
+        left: 220px;
+        bottom: -120px;
+        transform: rotate(-10deg)
+    }
+}
+
+@keyframes Waves1 {
+    0% {
+        left: 0px;
+        bottom:0px;
+    }
+    20% {
+        left: -10px;
+        bottom:-2px;
+    }
+    40% {
+        left: -30px;
+        bottom:-2px;
+    }
+    60% {
+        left: -25px;
+        bottom:-10px;
+    }
+    80% {
+        left: -10px;
+        bottom:-5px;
+    }
+    100% {
+        left: 0px;
+        bottom:0px;
+    }
+}
+
+@keyframes Waves2 {
+    0% {
+        left: 0px;
+        bottom:40px;
+    }
+    20% {
+        left: -40px;
+        bottom:38px;
+    }
+    40% {
+        left: -20px;
+        bottom:39px;
+    }
+    60% {
+        left: -15px;
+        bottom:32px;
+    }
+    80% {
+        left: -5px;
+        bottom:35px;
+    }
+    100% {
+        left: 0px;
+        bottom:40px;
+    }
+}
+
+@keyframes Waves3 {
+    0% {
+        left: 0px;
+        bottom:80px;
+    }
+    20% {
+        left: -10px;
+        bottom:78px;
+    }
+    40% {
+        left: -30px;
+        bottom:70px;
+    }
+    60% {
+        left: -25px;
+        bottom:74px;
+    }
+    80% {
+        left: -10px;
+        bottom:72px;
+    }
+    100% {
+        left: 0px;
+        bottom:80px;
+    }
+}
+
+@keyframes Waves4 {
+    0% {
+        left: -10px;
+        bottom:120px;
+    }
+    20% {
+        left: -4px;
+        bottom:110px;
+    }
+    40% {
+        left: -20px;
+        bottom:120px;
+    }
+    60% {
+        left: -10px;
+        bottom:116px;
+    }
+    80% {
+        left: -4px;
+        bottom:115px;
+    }
+    100% {
+        left: -10px;
+        bottom:120px;
+    }
+}
+
+@keyframes Waves5 {
+    0% {
+        left: -5px;
+        bottom:150px;
+    }
+    20% {
+        left: -10px;
+        bottom:160px;
+    }
+    40% {
+        left: -32px;
+        bottom:155px;
+    }
+    60% {
+        left: -22px;
+        bottom:152px;
+    }
+    80% {
+        left: -10px;
+        bottom:155px;
+    }
+    100% {
+        left: -5px;
+        bottom:150px;
+    }
+}
+
+@keyframes Waves6 {
+    0% {
+        left: -20px;
+        bottom:190px;
+    }
+    20% {
+        left: -2px;
+        bottom:182px;
+    }
+    40% {
+        left: -30px;
+        bottom:198px;
+    }
+    60% {
+        left: -25px;
+        bottom:193px;
+    }
+    80% {
+        left: 0px;
+        bottom:189px;
+    }
+    100% {
+        left: -20px;
+        bottom:190px;
+    }
+}
+
+@keyframes Waves7 {
+    0% {
+        left: 0px;
+        bottom:240px;
+    }
+    20% {
+        left: -10px;
+        bottom:232px;
+    }
+    40% {
+        left: -30px;
+        bottom:230px;
+    }
+    60% {
+        left: -25px;
+        bottom:240px;
+    }
+    80% {
+        left: -10px;
+        bottom:233px;
+    }
+    100% {
+        left: 0px;
+        bottom:240px;
+    }
+}
+
+@keyframes Waves8 {
+    0% {
+        left: -5px;
+        bottom:280px;
+    }
+    20% {
+        left: -1px;
+        bottom:272px;
+    }
+    40% {
+        left: -20px;
+        bottom:274px;
+    }
+    60% {
+        left: -32px;
+        bottom:280px;
+    }
+    80% {
+        left: -4px;
+        bottom:274px;
+    }
+    100% {
+        left: -5px;
+        bottom:280px;
+    }
+}

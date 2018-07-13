@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sinking Ship</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    
+</head>
+<body>
+
+    <div class="result alert" id="result" style="display: none;">
+        Congratulations, You Got 100 Score !
+    </div> 
+
+    <div class="after fail alert" id="fail" style="display: none;">
+        Oh no, Your Ship is Sinking ..
+
+        
+    </div>
+
+    <div class="after success alert" id="success" style="display: none;">
+            Congratulations, Your Ship is not Sinking ..
+        </div>
+
+    <div class="life-total" id="life">
+        <div class="life"><img src="assets/img/ship.png" alt="ship"></div>
+        <div class="life"><img src="assets/img/ship.png" alt="ship"></div>
+    </div>
+    <div class="term">
+        <h1 id="titles"></h1>
+        <ul id="list-title">
+            <li style="color: #fff; opacity: 0.2;">r</li>
+        </ul>
+        
+        <div class="letter" id="letter">
+
+        </div>
+    </div>
+
+    <div class="score">
+        <!--
+        <div class="inscore">
+            Time
+            <div class="score-value" id="time">
+                0
+             </div>
+        </div>
+        <div class="inscore" style="padding-right: 0;">
+           <div class="help" onclick="clues()" id="clue">?</div>
+        </div>
+        -->
+    </div>
+
+    <div class="ship" id="ship"><img src="assets/img/ship.png" alt="ship"></div>
+    
+    <div class="wave wave_1" style="height: 132px;"><img src="assets/img/wave_1.png" alt="wave_1"></div>
+    <div class="wave wave_2"><img src="assets/img/wave_2.png" alt="wave_2"></div>
+    <div class="wave wave_3"><img src="assets/img/wave_3.png" alt="wave_3"></div>
+    <div class="wave wave_4"><img src="assets/img/wave_4.png" alt="wave_4"></div>
+    <div class="wave wave_5"><img src="assets/img/wave_5.png" alt="wave_5"></div>
+    <div class="wave wave_6"><img src="assets/img/wave_6.png" alt="wave_6"></div>
+    <div class="wave wave_7"><img src="assets/img/wave_7.png" alt="wave_7"></div>
+
+    <div class="input-section">
+        <h1>Select Letter</h1>
+        <div class="letter-small" onclick="submit(this, 'A')">A</div>
+        <div class="letter-small" onclick="submit(this, 'B')">B</div>
+        <div class="letter-small" onclick="submit(this, 'C')">C</div>
+        <div class="letter-small" onclick="submit(this, 'D')">D</div>
+        <div class="letter-small" onclick="submit(this, 'E')">E</div>
+        <div class="letter-small" onclick="submit(this, 'F')">F</div>
+        <div class="letter-small" onclick="submit(this, 'G')">G</div>
+        <div class="letter-small" onclick="submit(this, 'H')">H</div>
+        <div class="letter-small" onclick="submit(this, 'I')">I</div>
+        <div class="letter-small" onclick="submit(this, 'J')">J</div>
+        <div class="letter-small" onclick="submit(this, 'K')">K</div>
+        <div class="letter-small" onclick="submit(this, 'L')">L</div>
+        <div class="letter-small" onclick="submit(this, 'M')">M</div>
+        <div class="letter-small" onclick="submit(this, 'N')">N</div>
+        <div class="letter-small" onclick="submit(this, 'O')">O</div>
+        <div class="letter-small" onclick="submit(this, 'P')">P</div>
+        <div class="letter-small" onclick="submit(this, 'Q')">Q</div>
+        <div class="letter-small" onclick="submit(this, 'R')">R</div>
+        <div class="letter-small" onclick="submit(this, 'S')">S</div>
+        <div class="letter-small" onclick="submit(this, 'T')">T</div>
+        <div class="letter-small" onclick="submit(this, 'U')">U</div>
+        <div class="letter-small" onclick="submit(this, 'V')">V</div>
+        <div class="letter-small" onclick="submit(this, 'W')">W</div>
+        <div class="letter-small" onclick="submit(this, 'X')">X</div>
+        <div class="letter-small" onclick="submit(this, 'Y')">Y</div>
+        <div class="letter-small" onclick="submit(this, 'Z')">Z</div>
+    </div>
+</body>
+</html>
+
+<script src="./assets/js/App.js"></script>
